@@ -1,0 +1,28 @@
+{
+  "switch": {
+    "SwitchToLight": "切换到浅色",
+    "SwitchToDark": "切换到深色"
+  },
+  "search": {
+    "PleaseInputThePlace": "请输入地址",
+    "enterDateRange": "输入时间段",
+    "From": "开始",
+    "To": "结束",
+    "Today": "今天",
+    "ForHistoryTheDateShouldNotBeLessThanEightDaysAgoAndTwodaysFutuerDueToAPILimit": "由于API的限制，历史只能选择前8天后2天的日期",
+    "ForHistoryTheEndDateShouldBeEqualToOrGreaterThanFromDate": "历史结束日期必须大于等于开始日期",
+    "cityName": "城市名",
+    "EG": "例如",
+    "USZip": "美国邮编",
+    "UKPstcode": "英国邮编",
+    "CanadaPostalCode": "加拿大邮编",
+    "metar": "气象",
+    "iata": "国际空运协会",
+    "autoIPLookup": "随机IP查看",
+    "IPAddress": "IP地址(支持IPv4和IPv6)"
+  },
+  "chart": {
+    "DayFrom": "白天从",
+    "Hour": "小时"
+  }
+}

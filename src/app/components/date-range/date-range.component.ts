@@ -21,9 +21,7 @@ export class DateRangeComponent implements OnInit {
     end: new FormControl(currentDate)
   });
   disabledToday = true;
-  constructor(
-    private adapter: DateAdapter<any>
-  ) {
+  constructor() {
   }
 
   ngOnInit(): void {

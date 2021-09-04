@@ -25,7 +25,6 @@ import { LanguageToggleComponent } from './components/language-toggle/language-t
 import { NgxEchartsModule } from 'ngx-echarts';
 
 import {
-  MAT_MOMENT_DATE_FORMATS,
   MomentDateAdapter,
   MAT_MOMENT_DATE_ADAPTER_OPTIONS,
 } from '@angular/material-moment-adapter';

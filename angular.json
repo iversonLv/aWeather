@@ -16,6 +16,9 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
+          "allowedCommonJsDependencies": [
+            "moment/locale/zh-cn"
+          ],
           "options": {
             "outputPath": "dist/aWeather",
             "index": "src/index.html",
@@ -58,7 +61,7 @@
                 {
                   "type": "anyComponentStyle",
                   "maximumWarning": "6kb",
-                  "maximumError": "10kb"
+                  "maximumError": "150kb"
                 }
               ]
             }

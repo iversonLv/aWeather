@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "predeploy": "ng build --prod --output-path docs --base-href /aWeather/"
+    "predeploy": "ng build --prod --build-optimizer --output-path docs --base-href /aWeather/"
   },
   "private": true,
   "dependencies": {

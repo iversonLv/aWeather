@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2, OnDestroy, Inject } from '@angular/core';
 import { WeatherService } from './weather.service';
 
 import { currentDate } from './shared/utils';
 
 // i18n
 import { TranslateService } from '@ngx-translate/core';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,7 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./app.component.scss'],
   providers: [WeatherService]
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
   // init state
   darkMode = false;
   language = 'en';
@@ -29,7 +30,11 @@ export class AppComponent implements OnInit {
     lang: this.language
   };
 
-  constructor(private weatherService: WeatherService, private translate: TranslateService) {
+  constructor(
+    @Inject(DOCUMENT) private document: Document,
+    private renderer: Renderer2,
+    private weatherService: WeatherService,
+    private translate: TranslateService) {
     // this language will be used as a fallback when a translation isn't found in the current language
     translate.setDefaultLang('en');
 
@@ -40,6 +45,10 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.getWeather(this.qP);
+  }
+
+  ngOnDestroy(): void {
+    this.renderer.removeClass(this.document.body, 'dark-theme-mode');
   }
 
   // set place
@@ -80,6 +89,12 @@ export class AppComponent implements OnInit {
 
   // setDarkMode
   setDarkMode = (e: boolean): boolean => {
+    // need add/remove class to body tab in order that the popup apply the theme
+    if (e) {
+      this.renderer.addClass(this.document.body, 'dark-theme-mode');
+    } else {
+      this.renderer.removeClass(this.document.body, 'dark-theme-mode');
+    }
     return (this.darkMode = e);
   }
 

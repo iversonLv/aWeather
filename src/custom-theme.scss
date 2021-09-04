@@ -35,15 +35,33 @@ $mat-light-theme-foreground: (
   icons:           rgba(black, 0.54),
   text:            rgba(black, 0.87)
 );
-$market-primary: mat-palette($mat-light-blue);
-$market-accent: mat-palette($mat-light-green);
-$market-warn: mat-palette($mat-red);
+// Background palette for light themes.
+$mat-light-theme-background: (
+  status-bar: map_get($mat-grey, 300),
+  app-bar:    map_get($mat-grey, 100),
+  background: map_get($mat-grey, 50),
+  hover:      rgba(black, 0.04), // TODO(kara): check style with Material Design UX
+  card:       white,
+  dialog:     white,
+  disabled-button: $black-12-opacity,
+  raised-button: white,
+  focused-button: $black-6-opacity,
+  selected-button: map_get($mat-grey, 300),
+  selected-disabled-button: map_get($mat-grey, 400),
+  disabled-button-toggle: map_get($mat-grey, 200),
+);
+$aWeather-primary: mat-palette($mat-light-blue);
+$aWeather-accent: mat-palette($mat-light-green);
+$aWeather-warn: mat-palette($mat-red);
 
 
-$market-theme: mat-light-theme($market-primary, $market-accent, $market-warn);
+$aWeather-theme: mat-light-theme($aWeather-primary, $aWeather-accent, $aWeather-warn);
 
-@include t-theme($market-theme, $mat-light-theme-foreground);
-@include angular-material-theme($market-theme);
+.mat-date-range-input-inner[disabled] {
+  color: mat-color($mat-light-theme-foreground, base)!important;
+}
+@include t-theme($aWeather-theme, $mat-light-theme-foreground);
+@include angular-material-theme($aWeather-theme);
 
 //for dark theme
 
@@ -61,12 +79,35 @@ $mat-dark-theme-foreground: (
   text:            rgba(white, 0.87)
 );
 
-$market-primary-dark: mat-palette($mat-gray);
-$market-accent-dark: mat-palette($mat-blue-grey);
-$market-warn-dark: mat-palette($mat-red);
+// Background palette for dark themes.
+$mat-dark-theme-background: (
+  status-bar: black,
+  app-bar:    map_get($mat-grey, 900),
+  background: #303030,
+  hover:      rgba(white, 0.04), // TODO(kara): check style with Material Design UX
+  card:       map_get($mat-grey, 800),
+  dialog:     map_get($mat-grey, 800),
+  disabled-button: $white-12-opacity,
+  raised-button: map-get($mat-grey, 800),
+  focused-button: $white-6-opacity,
+  selected-button: map_get($mat-grey, 900),
+  selected-disabled-button: map_get($mat-grey, 800),
+  disabled-button-toggle: map_get($mat-grey, 1000),
+);
+$aWeather-primary-dark: mat-palette($mat-gray);
+$aWeather-accent-dark: mat-palette($mat-blue-grey);
+$aWeather-warn-dark: mat-palette($mat-red);
 
-$market-theme-dark: mat-dark-theme($market-primary-dark, $market-accent-dark, $market-warn-dark);
+$aWeather-theme-dark: mat-dark-theme($aWeather-primary-dark, $aWeather-accent-dark, $aWeather-warn-dark);
 .dark-theme-mode {
-    @include t-theme($market-theme-dark, $mat-dark-theme-foreground);
-    @include angular-material-theme($market-theme-dark);
+    .mat-date-range-input-inner[disabled],
+    .mat-datepicker-toggle {
+      color: mat-color($mat-dark-theme-foreground, base)!important;
+    }
+    .mat-datepicker-content{
+      background: mat-color($mat-dark-theme-background, background)!important;
+      color: mat-color($mat-dark-theme-foreground, base)!important;
+    }
+    @include t-theme($aWeather-theme-dark, $mat-dark-theme-foreground);
+    @include angular-material-theme($aWeather-theme-dark);
 }

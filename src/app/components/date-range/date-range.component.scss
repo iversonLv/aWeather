@@ -17,13 +17,3 @@
   }
 }
 
-.mat-date-range-input-inner[disabled] {
-  color: mat-color($mat-light-theme-foreground, base);
-}
-
-.dark-theme-mode {
-
-  .mat-date-range-input-inner[disabled] {
-    color: mat-color($mat-dark-theme-foreground, base);
-  }
-}

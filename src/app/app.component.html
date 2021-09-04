@@ -1,4 +1,4 @@
-<div class="root mat-app-background" [ngClass]="{'dark-theme-mode' : darkMode}">
+<div class="root mat-app-background">
   <!-- container -->
   <!-- topBar -->
   <mat-toolbar class="topBar">
@@ -42,5 +42,5 @@
     *ngIf="weatherData?.forecast?.forecastday.length > 1 && !isLoading"></app-multiple-date-stack-line-chart>
 </div>
 
-<app-info-tool-tip *ngIf="showTooltip" [pageXY]="pageXY" class="mat-app-background" [ngClass]="{'dark-theme-mode' : darkMode}">
+<app-info-tool-tip *ngIf="showTooltip" [pageXY]="pageXY">
 </app-info-tool-tip>

@@ -1,0 +1,62 @@
+<mat-card class="tooltip" [style]="'left:' + pageXY[0] + 'px; top:' + pageXY[1] + 'px'">
+  <ul>
+    <li>
+      {{
+        "search.ForHistoryTheDateShouldNotBeLessThanEightDaysAgoAndTwodaysFutuerDueToAPILimit" | translate
+      }}
+    </li>
+    <li>
+      {{
+        "search.ForHistoryTheEndDateShouldBeEqualToOrGreaterThanFromDate" | translate
+      }}
+    </li>
+    <li>
+      {{ "search.cityName" | translate }}
+      <span class="infoHighlighted">
+        {{ "search.EG" | translate }}: q=Paris
+      </span>
+    </li>
+    <li>
+      {{ "search.USZip" | translate }}
+      <span class="infoHighlighted">
+        {{ "search.EG" | translate }}: q=10001
+      </span>
+    </li>
+    <li>
+      {{ "search.UKPstcode" | translate }}
+      <span class="infoHighlighted">
+        {{ "search.EG" | translate }}: q=SW1
+      </span>
+    </li>
+    <li>
+      {{ "search.CanadaPostalCode" | translate }}
+      <span class="infoHighlighted">
+        {{ "search.EG" | translate }} q=G2J
+      </span>
+    </li>
+    <li>
+      {{ "search.metar" | translate }}
+      <span class="infoHighlighted">
+        {{"search.EG" | translate }}: q=metar:EGLL
+      </span>
+    </li>
+    <li>
+      {{ "search.iata" | translate }}
+      <span class="infoHighlighted">
+        {{ "search.EG" | translate }}: q=iata:DXB
+      </span>
+    </li>
+    <li>
+      {{ "search.autoIPLookup" | translate }}
+      <span class="infoHighlighted">
+        {{ "search.EG" | translate }}: q=auto:ip
+      </span>
+    </li>
+    <li>
+      {{ "search.IPAddress" | translate }}
+      <span class="infoHighlighted">
+        {{ "search.EG" | translate }}: q=100.0.0.1
+      </span>
+    </li>
+  </ul>
+</mat-card>

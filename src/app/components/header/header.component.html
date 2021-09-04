@@ -1,0 +1,16 @@
+<header>
+  <h1 class="title">
+    <!-- logo -->
+    <mat-icon class="logo"><span class="material-icons-outlined">cloud_queue</span></mat-icon>
+    <!-- title -->
+    aWeather | Angular
+    <!-- location -->
+    <span class="subTitle" [class]="{'darkSubTitle' : darkMode}">
+    <span class="subTitleSpan mat-app-background" [ngClass]="{'dark-theme-mode' : darkMode}">
+      <span *ngIf="weatherData && !isLoading">
+        {{weatherData?.location?.name}}, {{weatherData?.location?.country}}
+      </span>
+    </span>
+    </span>
+  </h1>
+</header>

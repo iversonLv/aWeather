@@ -1,1 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+/* Add application styles & imports to this file! */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+
+:root {
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+ul,
+li {
+  list-style: none;
+}
+

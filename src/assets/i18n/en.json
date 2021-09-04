@@ -1,0 +1,28 @@
+{
+  "switch": {
+    "SwitchToLight": "Switch to light",
+    "SwitchToDark": "Switch to dark"
+  },
+  "search": {
+    "PleaseInputThePlace": "Please input the place",
+    "enterDateRange": "Enter a date range",
+    "From": "From",
+    "To": "To",
+    "Today": "Today",
+    "ForHistoryTheDateShouldNotBeLessThanEightDaysAgoAndTwodaysFutuerDueToAPILimit": "For history the date should not be less than 8 days ago and 2 days futuer due to API limit",
+    "ForHistoryTheEndDateShouldBeEqualToOrGreaterThanFromDate": "For history the end date should be equal to or greater than from date.",
+    "cityName": "city name",
+    "EG": "e.g.",
+    "USZip": "US zip",
+    "UKPstcode": "UK postcode",
+    "CanadaPostalCode": "Canada postal code",
+    "metar": "metar",
+    "iata": "iata",
+    "autoIPLookup": "auto:ip IP lookup",
+    "IPAddress": "IP address (IPv4 and IPv6 supported)"
+  },
+  "chart": {
+    "DayFrom": "Day from",
+    "Hour": "Hour"
+  }
+}

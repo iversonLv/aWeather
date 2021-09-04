@@ -1,0 +1,6 @@
+<mat-slide-toggle
+  [ngModel]="darkMode"
+  (change)="setDarkModeEmit(darkMode = !darkMode)"
+>
+  {{darkMode ? ('switch.SwitchToLight' | translate) : ('switch.SwitchToDark' | translate)}}
+</mat-slide-toggle>

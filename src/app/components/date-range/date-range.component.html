@@ -1,0 +1,14 @@
+<div class="date-range" [ngClass]="{'dark-theme-mode' : darkMode}">
+  <mat-form-field class="input">
+  <mat-label>{{"search.enterDateRange" | translate}}</mat-label>
+    <mat-date-range-input disabled [rangePicker]="dateRangePicker" [dateFilter]="dateFilterFn" [formGroup]="range">
+      <input matStartDate #dateRangeStart placeholder="From" formControlName="start">
+      <input matEndDate #dateRangeEnd formControlName="end"
+      (dateChange)="dateRangeChangeEmit(dateRangeStart, dateRangeEnd)" placeholder="To">
+    </mat-date-range-input>
+    <mat-datepicker-toggle matSuffix [for]="dateRangePicker"></mat-datepicker-toggle>
+    <mat-date-range-picker #dateRangePicker disabled=false></mat-date-range-picker>
+  </mat-form-field>
+
+  <button mat-button (click)="handleToday()" [disabled]="disabledToday">{{"search.Today" | translate}}</button>
+</div>

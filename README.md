@@ -25,3 +25,80 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Deploy
+This project I deployed on github page, as follow some info for it:  
+
+https://angular.cn/guide/deployment  
+
+`ng build --prod --output-path docs --base-href /aWeather/`
+
+https://docs.github.com/en/github/working-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site  
+
+environment.ts
+environment.pro.ts
+| Key       | Value     | Description     |
+| :------------- | :----------: | :----------: |
+|  API_URL | https://weatherapi-com.p.rapidapi.com/  | Main Api could open the [rapid api page](https://rapidapi.com/weatherapi/api/weatherapi-com/) |
+| API_KEY   | Please use your own one | na |
+| API_HOST   | weatherapi-com.p.rapidapi.com | na |
+
+## Todo list  
+
+[] Setup the project  
+  [x] Clear the project  
+  [x] Test support scss  
+  [x] Setup google font in style.css  
+    https://fonts.google.com/specimen/Roboto  
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');  
+  [x] Setup Angular Material  
+    [x] Add `@angular/cdk @angular/material dependency`  
+    [x] Create SharedModule which for all shared module  
+    [x] Create material module, remember, in shared module, need add MaterialModule in the export array or can't be used in other places  
+    [x] material icon, need add <link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=block" rel="stylesheet"> to index.html  
+    or import to style.css  
+    [x] material theme need add @import '~@angular/material/prebuilt-themes/indigo-pink.css'; to style.css  
+  [x] Header    
+    [x] logo  
+      https://fonts.google.com/icons?icon.query=cloud  
+  [x] Add some basic css style  
+  [] API call  
+    [x] Place  
+    [x] Date range 
+    [] Lang  
+  [x] Search  
+    [x] Place input  
+    [x] tooltip  
+    [x] date range  
+    [x] today button  
+      [x] angular materil button today need check today disabled or not. 
+  [x] Chart  
+    [x] Install the dependency and setup basic for Test (echarts, ngx-echarts)
+    https://www.npmjs.com/package/ngx-echarts  
+    [x] Single line chart    
+    moved the common cal data function to utils  
+    [x] Multiple lines chart  
+  [x] Loading
+  [] light/dark theme  
+    [x] create the light/dark mode component and test
+    https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=FAFAFA
+    [] Header  
+    [] Searh card  
+    [] tooltip  
+    [] date range  
+    [] charts  
+  [x] i18N  
+    https://www.npmjs.com/package/@ngx-translate/core
+    [x] setup i18n and test
+    [x] create language toggle component and bind the lang
+    [button-toggle](https://material.angular.io/components/button-toggle/examples)
+    [x] update compnent to support i18n  
+      [x] Dark mode switch component
+      [x] Header no need
+      [x] language toolge no need
+      [x] search
+      [x] tooltip
+      [x] chart
+    [x] intergate API lang call
+    
+[] Deploy 

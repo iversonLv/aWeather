@@ -1,0 +1,29 @@
+@import '../../../custom-theme.scss';
+
+.date-range {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: baseline;
+
+  .input {
+    flex: 1;
+    margin-right: 10px;
+  }
+
+  .mat-datepicker-toggle {
+    font-size: 24px;
+  }
+}
+
+.mat-date-range-input-inner[disabled] {
+  color: mat-color($mat-light-theme-foreground, base);
+}
+
+.dark-theme-mode {
+
+  .mat-date-range-input-inner[disabled] {
+    color: mat-color($mat-dark-theme-foreground, base);
+  }
+}

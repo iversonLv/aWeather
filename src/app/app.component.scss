@@ -1,0 +1,55 @@
+
+.root {
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 100vh;
+  max-width: 100%;
+  width: 100vw;
+  padding-bottom: 50px;
+}
+
+.topBar {
+  font-size: 14px;
+  .toolbar-spacer {
+    flex: 1 1 auto;
+  }
+}
+
+.paper {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  padding: 10px;
+  max-width: 600px;
+  margin: 0 auto 15px;
+  align-items: stretch;
+  position: relative;
+}
+.search {
+  width: 100%;
+  display: flex;
+  padding-bottom: 15px;
+  align-items: baseline;
+}
+
+mat-icon {
+  cursor: pointer;
+}
+.input {
+  margin: 0;
+  flex: 1;
+}
+.divider {
+  height: 28px;
+  margin: 0 10px;
+}
+
+::ng-deep {
+  .loading {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}

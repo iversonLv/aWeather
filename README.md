@@ -45,8 +45,8 @@ environment.pro.ts
 
 ## Todo list  
 
-[] Setup the project  
-  [x] Clear the project  
+* [] Setup the project  
+[x] Clear the project  
   [x] Test support scss  
   [x] Setup google font in style.css  
     https://fonts.google.com/specimen/Roboto  
@@ -58,47 +58,50 @@ environment.pro.ts
     [x] material icon, need add <link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=block" rel="stylesheet"> to index.html  
     or import to style.css  
     [x] material theme need add @import '~@angular/material/prebuilt-themes/indigo-pink.css'; to style.css  
-  [x] Header    
-    [x] logo  
-      https://fonts.google.com/icons?icon.query=cloud  
+* [x] Header    
+  [x] logo  
+    https://fonts.google.com/icons?icon.query=cloud  
   [x] Add some basic css style  
-  [] API call  
-    [x] Place  
-    [x] Date range 
-    [] Lang  
-  [x] Search  
-    [x] Place input  
+* [x] API call  
+  [x] Place  
+  [x] Date range 
+  [x] Lang  
+* [x] Search  
+  [x] Place input  
+  [x] tooltip  
+  [x] date range  
+  [x] today button  
+    [x] angular materil button today need check today disabled or not. 
+* [x] Chart  
+  [x] Install the dependency and setup basic for Test (echarts, ngx-echarts)
+  https://www.npmjs.com/package/ngx-echarts  
+  [x] Single line chart    
+  moved the common cal data function to utils  
+  [x] Multiple lines chart  
+* [x] Loading
+* [] light/dark theme  
+  [x] create the light/dark mode component and test
+  https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=FAFAFA
+  P.S. poper for angular material theme need apply theme class to the body tag
+  [x] Header  
+  [x] Searh card  
+  [x] tooltip  
+  [x] date range  
+  [] charts  
+* [x] i18N  
+  https://www.npmjs.com/package/@ngx-translate/core  
+  [x] setup i18n and test 
+  [x] create language toggle component and bind the lang  
+  [button-toggle](https://material.angular.io/components/button-toggle/examples)  
+  [x] update compnent to support i18n   
+    [x] Dark mode switch component  
+    [x] Header no need  
+    [x] language toolge no need  
+    [x] search  
     [x] tooltip  
-    [x] date range  
-    [x] today button  
-      [x] angular materil button today need check today disabled or not. 
-  [x] Chart  
-    [x] Install the dependency and setup basic for Test (echarts, ngx-echarts)
-    https://www.npmjs.com/package/ngx-echarts  
-    [x] Single line chart    
-    moved the common cal data function to utils  
-    [x] Multiple lines chart  
-  [x] Loading
-  [] light/dark theme  
-    [x] create the light/dark mode component and test
-    https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=FAFAFA
-    [] Header  
-    [] Searh card  
-    [] tooltip  
-    [] date range  
-    [] charts  
-  [x] i18N  
-    https://www.npmjs.com/package/@ngx-translate/core
-    [x] setup i18n and test
-    [x] create language toggle component and bind the lang
-    [button-toggle](https://material.angular.io/components/button-toggle/examples)
-    [x] update compnent to support i18n  
-      [x] Dark mode switch component
-      [x] Header no need
-      [x] language toolge no need
-      [x] search
-      [x] tooltip
-      [x] chart
-    [x] intergate API lang call
+    [x] chart  
+  [x] intergate API lang call  
     
-[] Deploy 
+* [x] Deploy  
+  https://iversonlv.github.io/aWeather/  
+  https://github.com/iversonLv/aWeather

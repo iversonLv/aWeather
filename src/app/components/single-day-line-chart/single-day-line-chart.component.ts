@@ -1,9 +1,12 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { EChartsOption } from 'echarts';
 
 import { calData, calGreatest} from '../../shared/utils';
 // i18n
 import { TranslateService } from '@ngx-translate/core';
+
+// color
+import { modeColor, modeTooltipColor } from '../../shared/utils';
 
 @Component({
   selector: 'app-single-day-line-chart',
@@ -11,13 +14,20 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./single-day-line-chart.component.css'],
   providers: [TranslateService]
 })
-export class SingleDayLineChartComponent implements OnInit {
+export class SingleDayLineChartComponent implements OnChanges {
+  @Input() darkMode;
   @Input() day;
   chartOption: EChartsOption;
   constructor(private translate: TranslateService) {}
 
-  ngOnInit(): void {
-    this.chartOption = {
+
+  ngOnChanges(changes: SimpleChanges): void {
+    // console.log(changes)
+    this.chartOption = this.generateOption(changes.darkMode.currentValue);
+  }
+
+  generateOption = (mode): EChartsOption => {
+    return {
       backgroundColor: 'rgb(255, 255, 255, 0)',
       title: {
         text: this.day?.date,
@@ -26,7 +36,7 @@ export class SingleDayLineChartComponent implements OnInit {
         textStyle: {
           fontSize: 13,
           fontWeight: 300,
-          color: 'rgb(0, 0, 0)',
+          color: modeColor(mode),
         },
       },
       xAxis: {
@@ -47,10 +57,10 @@ export class SingleDayLineChartComponent implements OnInit {
           type: 'shadow',
         },
         textStyle: {
-          color: 'rgb(0, 0, 0)',
+          color: modeColor(mode),
         },
-        // borderColor: modeTooltipColor,
-        // backgroundColor: modeTooltipColor,
+        borderColor: modeTooltipColor(mode),
+        backgroundColor: modeTooltipColor(mode),
         formatter(params): any {
           // console.log(params[0])
           return `${params[0].data.content.time} - ${params[0].value}℃ <br/>
@@ -63,13 +73,13 @@ export class SingleDayLineChartComponent implements OnInit {
           data: calData(this.day?.hour),
           animation: false,
           lineStyle: {
-            color: 'rgb(0, 0, 0)',
+            color: modeColor(mode),
           },
           markArea: {
             silent: true,
             itemStyle: {},
             label: {
-              color: 'rgb(0, 0, 0)',
+              color: modeColor(mode),
               show: true,
               position: [0, -30],
             },
@@ -91,7 +101,7 @@ export class SingleDayLineChartComponent implements OnInit {
           smooth: true,
           symbolSize: 35,
           label: {
-            color: 'rgb(0, 0, 0)',
+            color: modeColor(mode),
             show: true,
             fontSize: 12,
             fontWeight: 300,

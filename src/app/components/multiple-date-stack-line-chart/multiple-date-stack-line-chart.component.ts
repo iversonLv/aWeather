@@ -1,8 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { EChartsOption } from 'echarts';
 
 import { calDaysGreatest, calDaysData, calLegends} from '../../shared/utils';
+
+// color
+import { modeColor, modeTooltipColor } from '../../shared/utils';
 
 @Component({
   selector: 'app-multiple-date-stack-line-chart',
@@ -10,13 +13,17 @@ import { calDaysGreatest, calDaysData, calLegends} from '../../shared/utils';
   styleUrls: ['./multiple-date-stack-line-chart.component.css'],
   providers: [TranslateService]
 })
-export class MultipleDateStackLineChartComponent implements OnInit {
+export class MultipleDateStackLineChartComponent implements OnChanges {
+  @Input() darkMode;
   @Input() days;
   chartOption: EChartsOption;
   constructor(private translate: TranslateService) {}
 
-  ngOnInit(): void {
-    this.chartOption = {
+  ngOnChanges(changes: SimpleChanges): any {
+    this.chartOption = this.generateOption(changes.darkMode.currentValue);
+  }
+  generateOption = (mode): EChartsOption => {
+    return {
       backgroundColor: 'rgba(255, 255, 255, 0)',
       legend: {
         type: 'scroll',
@@ -24,10 +31,10 @@ export class MultipleDateStackLineChartComponent implements OnInit {
         itemHeight: 35,
         data: calLegends(this.days),
         textStyle: {
-          color: 'rgb(0, 0, 0)',
+          color: modeColor(mode),
         },
         pageTextStyle: {
-          color: 'rgb(0, 0, 0)',
+          color: modeColor(mode),
         },
       },
       xAxis: {
@@ -47,8 +54,8 @@ export class MultipleDateStackLineChartComponent implements OnInit {
         axisPointer: {
           type: 'shadow',
         },
-        // borderColor: modeTooltipColor,
-        // backgroundColor: modeTooltipColor,
+        borderColor: modeTooltipColor(mode),
+        backgroundColor: modeTooltipColor(mode),
         formatter(params): any {
           // console.log(params);
           let str = '';

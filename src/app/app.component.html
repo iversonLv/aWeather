@@ -34,11 +34,11 @@
   </mat-card>
   <!-- sigle line chart -->
   <ng-container *ngIf="!isLoading && weatherData?.forecast?.forecastday">
-    <app-single-day-line-chart [day]="day" *ngFor="let day of weatherData?.forecast?.forecastday">
+    <app-single-day-line-chart [day]="day" [darkMode]="darkMode" *ngFor="let day of weatherData?.forecast?.forecastday">
     </app-single-day-line-chart>
   </ng-container>
   <!-- multiple lines chart -->
-  <app-multiple-date-stack-line-chart [days]="weatherData?.forecast?.forecastday"
+  <app-multiple-date-stack-line-chart [darkMode]="darkMode" [days]="weatherData?.forecast?.forecastday"
     *ngIf="weatherData?.forecast?.forecastday.length > 1 && !isLoading"></app-multiple-date-stack-line-chart>
 </div>
 

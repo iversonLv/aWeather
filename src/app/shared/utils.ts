@@ -82,3 +82,14 @@ export const calLegends = (data) => {
   });
   return arr;
 };
+
+import { DarkColor } from './color';
+
+// cal chart theme color
+export const modeColor = (mode, lightColor = 'rgba(255, 255,255, 1)') => {
+  return mode ? lightColor : DarkColor.mainColor;
+};
+
+export const modeTooltipColor = (mode, lightColor = 'rgba(255, 255,255, 1)') => {
+    return mode ? DarkColor.backgroundColor : lightColor;
+  };

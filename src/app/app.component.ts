@@ -2,6 +2,7 @@ import { Component, OnInit, Renderer2, OnDestroy, Inject } from '@angular/core';
 import { WeatherService } from './weather.service';
 
 import { currentDate } from './shared/utils';
+import * as _ from 'underscore';
 
 // i18n
 import { TranslateService } from '@ngx-translate/core';
@@ -41,6 +42,9 @@ export class AppComponent implements OnInit, OnDestroy {
     // the lang to use, if the lang isn't available, it will use the current loader to get them
     // swtich language will here
     translate.use(this.language);
+
+    // here delay the setplace call api
+    this.setPlace = _.debounce(this.setPlace, 1000);
   }
 
   ngOnInit(): void {
@@ -52,7 +56,7 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   // set place
-  setPlace(e): any {
+  setPlace = (e): any => {
     this.qP = { ...this.qP, q: e.target.value };
     this.getWeather(this.qP);
   }

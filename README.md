@@ -45,7 +45,7 @@ environment.pro.ts
 
 ## Todo list  
 
-* [] Setup the project  
+* [x] Setup the project  
 [x] Clear the project  
   [x] Test support scss  
   [x] Setup google font in style.css  
@@ -67,7 +67,7 @@ environment.pro.ts
   [x] Date range 
   [x] Lang  
 * [x] Search  
-  [x] Place input  
+  [x] Place input  underscore for debounce
   [x] tooltip  
   [x] date range  
   [x] today button  
@@ -79,7 +79,7 @@ environment.pro.ts
   moved the common cal data function to utils  
   [x] Multiple lines chart  
 * [x] Loading
-* [] light/dark theme  
+* [x] light/dark theme  
   [x] create the light/dark mode component and test
   https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=FAFAFA
   P.S. poper for angular material theme need apply theme class to the body tag
@@ -87,7 +87,8 @@ environment.pro.ts
   [x] Searh card  
   [x] tooltip  
   [x] date range  
-  [] charts  
+  [x] charts  
+  Need use onChanges to detect the mode changes
 * [x] i18N  
   https://www.npmjs.com/package/@ngx-translate/core  
   [x] setup i18n and test 

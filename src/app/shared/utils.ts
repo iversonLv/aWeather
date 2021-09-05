@@ -93,3 +93,4 @@ export const modeColor = (mode, lightColor = 'rgba(255, 255,255, 1)') => {
 export const modeTooltipColor = (mode, lightColor = 'rgba(255, 255,255, 1)') => {
     return mode ? DarkColor.backgroundColor : lightColor;
   };
+

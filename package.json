@@ -31,6 +31,7 @@
     "ngx-echarts": "^7.0.2",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
+    "underscore": "^1.13.1",
     "zone.js": "~0.10.3"
   },
   "devDependencies": {

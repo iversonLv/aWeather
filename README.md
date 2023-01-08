@@ -32,6 +32,12 @@ This project I deployed on github page, as follow some info for it:
 https://angular.cn/guide/deployment  
 
 `ng build --prod --output-path docs --base-href /aWeather/`
+run `npm run predeploy`
+After it copy index.html of docs folder and rename the copied file as 404.html
+then run `git add .`
+run `git commit -am "Deploy base on {latest commit}"`
+run `git push https://github.com/iversonLv/aWeather.git`
+
 
 https://docs.github.com/en/github/working-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site  
 

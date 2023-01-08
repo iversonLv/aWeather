@@ -17,7 +17,7 @@ export class WeatherService {
   getWeather(qP): Observable<any> {
     console.log(qP);
     return this.httpClient
-      .get<any>(`${API_URL}/history.json`, {
+      .get<any>(`${API_URL}history.json`, {
         params: { ...qP },
         headers: {
           'x-rapidapi-host': API_HOST,
